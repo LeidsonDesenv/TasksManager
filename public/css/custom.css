@@ -1,0 +1,15 @@
+.custom-thumbnail{
+    height: 170px;
+    background-color: #FFFFFF;    
+}
+.custom-thumbnail:hover{
+    background-color: #c7ddef;
+}
+.custom-title{
+    background-color: #8eb4cb;
+    color: #FFFFFF;
+    text-align: center;      
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
