@@ -1,51 +1,39 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<h1>Tasks Manager</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<h2>Teste de Programação</h2>
+<p>A proposta do projeto é criar um sistema com autenticação, autorização,  criar um CRUD completo, maniputar dados e arquivos</p>
+
+<h2>Nesse primeiro commit apresentei</h2>
+<p>Apresentação:</p>
+<ul>
+<li>
+    Criei um Dashboard básico usando as classe do BootStrap.
+</li>
+<li>Criei uma view para cadastrar novos usuários.</li>
+<li> Criei uma view para os usuários se logar.</li>
+<li>Na parte superio da tela tem um menu que ainda precisa ser refinado, mas que verifica se o usuário está logado e muda de acordo com isso.</li>
+<li>Na tela principal tem os links para criar novas tarefas e gerenciar as já criadas</li>
+<li> Somente pode editar ou excluir as tarefas quem as criou </li>
+<li>Inclui uma pasta chamada layouts nas view que é para reutilizar um modelo chamado template por toda a aplicação</li>
+</ul>
+
+<p><strong>Models</strong></p>
+
+<p>No projeto até o momento tem 2 models User e Task</p>
+<p>
+Na model User tem as variáveis rules e fillable, uma para as regras de inclusão no banco de dados e a outra pra 'setar' quais campos da tabela podem ser incluidos no banco.<br/>
+A model Task ainda não tem a variável rules que precisa ser incluida, mas tem também fillable tem o método author que pega via relacionamento com chave estrangeira o valor name da tabela 'users'.<br/>
+Foi configurado no arquivo AuthServiceProvider que fica na pasta provider que o usuário só poderar editar e excluir os arquivos que criou.<br/>
 </p>
 
-## About Laravel
+<p><strong>Controllers</strong></p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+<p>Cada Model tem o próprio controller que separa todas as funções que são executadas de cada rota. <br/>
+O  UserController tem apenas os métodos de registro de novo usuário, de consulta e de chamada para as views, e o TaskController tem todas funções de CRUD( adicionar novo item, editar, remover e consultar).
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p><strong>Espectativas</strong></p>
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
-
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+<p>A propósta para os próximos comits é melhorar a manipulação dos arquivos na hora de registar uma nova tarefa e também de consultar esses arquivos, a maior dificuldade desse projeto até então foi mexer com arquivos que foi uma novidade para mim.<br>
+Também pretendo incluir autenticação com redes sociais(facebook, google+, Twitter) com o uso do OAuth e incluir o armazenamento em nuvem no Amazon S3( que demora 24hs pra disponível após criação da conta).
+</p>
